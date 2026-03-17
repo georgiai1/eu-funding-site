@@ -22,24 +22,25 @@ export function QuickMatcher({ stats, filters, onFiltersChange }: QuickMatcherPr
     <section className="bg-gradient-to-br from-eu-blue via-[#0044CC] to-[#1a5cd6] relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(255,204,0,0.08),transparent_50%)]" />
 
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 py-14 sm:py-20">
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
         {/* Headline */}
-        <div className="max-w-2xl mb-10">
-          <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-3 py-1 mb-5">
-            <Zap size={14} className="text-eu-gold" />
-            <span className="text-white/90 text-sm font-medium">{stats.open} programs open now</span>
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-6">
+          <div>
+            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-3 py-1 mb-3">
+              <Zap size={14} className="text-eu-gold" />
+              <span className="text-white/90 text-sm font-medium">{stats.open} programs open now</span>
+            </div>
+            <h1 className="text-2xl sm:text-3xl font-bold text-white leading-tight tracking-tight">
+              Find your EU funding <span className="text-eu-gold">in 30 seconds</span>
+            </h1>
           </div>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight mb-4">
-            Find your EU funding<br />
-            <span className="text-eu-gold">in 30 seconds</span>
-          </h1>
-          <p className="text-white/60 text-base sm:text-lg">
-            Pick your category, search, and apply. We keep this list fresh every time you visit.
+          <p className="text-white/50 text-sm max-w-xs">
+            Pick a category, search, and apply. Updated every time you visit.
           </p>
         </div>
 
         {/* Search bar */}
-        <div className="relative max-w-2xl mb-6">
+        <div className="relative max-w-2xl mb-4">
           <Search size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-white/40" />
           <input
             type="text"
@@ -71,7 +72,7 @@ export function QuickMatcher({ stats, filters, onFiltersChange }: QuickMatcherPr
         </div>
 
         {/* Status filter */}
-        <div className="flex gap-3 mt-4">
+        <div className="flex gap-3 mt-3">
           {(['all', 'open', 'upcoming'] as const).map(status => (
             <button
               key={status}
